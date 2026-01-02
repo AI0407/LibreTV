@@ -1026,4 +1026,26 @@ body {
         max-height: 6rem;
         font-size: 0.8rem;
     }
+/* 为页面主体添加底部内边距，防止被广告遮挡 */
+body {
+    padding-bottom: 120px; /* 桌面端 */
+}
+
+/* 移动端适配（屏幕宽度≤640px时） */
+@media (max-width: 640px) {
+    body {
+        padding-bottom: 100px; /* 减小移动端底部内边距，适配广告高度 */
+    }
+    .adsbygoogle {
+        min-height: 50px; /* 移动端广告最小高度 */
+    }
+}
+
+/* 广告加载失败时的占位样式 */
+.adsbygoogle {
+    min-height: 60px;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
